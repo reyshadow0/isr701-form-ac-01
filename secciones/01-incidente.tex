@@ -1,6 +1,6 @@
 \section{Descripción del incidente}
 \label{sec:incidente}
-
+El incidente afectó a GitHub.com, cuyos servicios corrían en su mayoría en centros de datos propios. Sus metadatos se guardaban en clústeres MySQL con un primario para escrituras y réplicas para lecturas, y Orchestrator administraba la topología y el failover automático. Ocurrió entre el 21 y el 22 de octubre de 2018. Lo desencadenó un corte breve de conectividad entre el hub de red y el centro de datos principal de la Costa Este de Estados Unidos, durante el reemplazo de un equipo óptico que estaba fallando \cite{Warner2018}.
 \begin{table}[H]
   \centering
   \small
@@ -10,7 +10,14 @@
     \toprule
     \textbf{Hora (UTC)} & \textbf{Evento} \\
     \midrule
-     & \\
+21/10 22:52 & Se corta por unos segundos la conexión entre el hub de red y el centro de datos principal de la Costa Este, y Orchestrator pasa los primarios a la Costa Oeste. \\
+21/10 22:54 & El monitoreo interno lanza alertas y varios ingenieros comienzan a revisarlas. \\
+21/10 23:09 & GitHub pone el sitio en estado amarillo y poco después lo pasa a rojo. \\
+21/10 23:19 & Se pausan los webhooks y las compilaciones de GitHub Pages para proteger los datos ya recibidos. \\
+22/10 00:41 & Ya está en marcha la restauración desde backups de los clústeres afectados. \\
+22/10 11:12 & Todos los primarios vuelven a la Costa Este, aunque decenas de réplicas siguen con horas de atraso. \\
+22/10 16:24 & Con las réplicas sincronizadas se vuelve a la topología original, pero el estado sigue en rojo mientras se procesa lo acumulado. \\
+22/10 23:03 & Se termina de procesar lo pendiente y el estado vuelve a verde. \\
     \bottomrule
   \end{tabularx}
 \end{table}
