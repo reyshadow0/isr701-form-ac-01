@@ -10,9 +10,10 @@
     \toprule
     \textbf{N.\textdegree} & \textbf{Riesgo concreto} & \textbf{Medida preventiva} \\
     \midrule
-    1 &  \textbf{Sistema de Pre-Sustentaciones:} si el acta se genera desde una réplica atrasada, como las que en GitHub quedaron horas detrás del primario \cite{Warner2018}, sale sin la nota que el tribunal acaba de registrar y se firma con ese error. &En TA-PFC-E1 se define que notas y actas se leen siempre del primario. Una prueba lo verifica: registra una nota y genera el acta enseguida.\\
+    1 & \textbf{Sistema de Pre-Sustentaciones:} si el acta se genera desde una réplica atrasada, como las que en GitHub quedaron horas detrás del primario \cite{Warner2018}, sale sin la nota que el tribunal acaba de registrar y se firma con ese error. & En TA-PFC-E1 se define que notas y actas se leen siempre del primario. Una prueba lo verifica: registra una nota y genera el acta enseguida.\\
     2 & & \\
     3 & & \\
+    4 & \textbf{Sistema de Titulación (documentos habilitantes):} si falla la comunicación entre el almacenamiento de archivos y la base de datos al cargar un certificado, el archivo queda subido sin registro o el trámite figura enviado sin respaldo, generando estados divergentes similares a los ocurridos en GitHub \cite{Warner2018}. & En TA-PFC-E1 se establece guardar primero el archivo en el servidor, confirmar luego la transacción en la base de datos y correr una tarea periódica que detecte y alerte registros huérfanos. Se verifica simulando un corte de red tras subir un certificado y comprobando que la alerta se dispare.\\
     \bottomrule
   \end{tabularx}
 \end{table}
