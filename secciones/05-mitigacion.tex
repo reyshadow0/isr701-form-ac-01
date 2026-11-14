@@ -2,5 +2,7 @@
 \label{sec:mitigacion}
 
 \subsection{Inmediata}
+GitHub decidió seguir adelante con la topología nueva y proteger los datos de los usuarios, aunque eso dejara el servicio casi inutilizable durante horas. Bloqueó los despliegues, pausó los webhooks y las compilaciones de GitHub Pages, y restauró los clústeres afectados desde los backups de MySQL, que se toman cada cuatro horas \cite{Warner2018}. Para que las réplicas de lectura se pusieran al día, sumó réplicas en la nube pública de la Costa Este y repartió entre ellas la carga. Luego volvió a la topología original, procesó la cola acumulada y guardó en binlogs las escrituras que no alcanzaron a replicarse, para conciliarlas después \cite{Warner2018}.
 
 \subsection{Permanente}
+GitHub configuró Orchestrator para que no promueva primarios de una región a otra, porque la latencia entre costas agravó el problema. Además, aceleró un sistema de estado que informa por componente, en lugar de usar solo verde, amarillo y rojo, e impulsó un diseño activo/activo/activo con redundancia N+1 por centro de datos. También se comprometió a probar sus supuestos y sus escenarios de falla antes de que afecten a los usuarios, con inyección de fallos e ingeniería del caos \cite{Warner2018}.
