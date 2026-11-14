@@ -1,0 +1,129 @@
+<mxfile host="Electron">
+  <diagram name="Página-1" id="UU5c0yfTDmn0bF-J7p92">
+    <mxGraphModel dx="2240" dy="1421" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="O-04gqA24_E6KpRBvElT-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fontStyle=1;fontFamily=Times New Roman;fillColor=light-dark(#f9e7e6, #512d2b);strokeColor=#b85450;" value="Degradación del servicio de GitHub&lt;div&gt;21-22 de octubre de 2018&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="200" x="411" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-62" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;fontFamily=Times New Roman;" target="O-04gqA24_E6KpRBvElT-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fontFamily=Times New Roman;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;b&gt;Interrupción de la conectividad&lt;/b&gt;&lt;div&gt;durante 43 segundos entre centros de datos de la costa este de EE.UU.&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="170" x="150" y="427" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fontFamily=Times New Roman;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;b&gt;Conmutación automática de MySQL&lt;/b&gt;&lt;div&gt;Orchestrator promovió réplicas de la costa oeste como servidores principales&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="207" x="-87" y="427" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fontFamily=Times New Roman;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;b&gt;Replicación incompleta entre regiones&lt;/b&gt;&lt;div&gt;Había escrituras de la costa este pendientes de replicación&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="167" x="-267" y="427" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fontFamily=Times New Roman;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Divergencia de escrituras entre regiones&lt;/b&gt;" vertex="1">
+          <mxGeometry height="60" width="179" x="-120" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-19" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.505;entryY=1.012;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;fontFamily=Times New Roman;entryPerimeter=0;" target="O-04gqA24_E6KpRBvElT-24">
+          <mxGeometry relative="1" x="0.221" as="geometry">
+            <Array as="points">
+              <mxPoint x="910" y="249.8" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-16" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fontFamily=Times New Roman;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Recuperación lenta de las bases de datos&lt;/b&gt;&lt;div&gt;Restauración desde respaldos, sincronización de réplicas y procesamiento de trabajos pendientes&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="240" x="790" y="288" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-22" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;entryX=0.5;entryY=1;entryDx=0;entryDy=0;fontFamily=Times New Roman;" target="O-04gqA24_E6KpRBvElT-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="490" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fontFamily=Times New Roman;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;b&gt;Topología MySQL no soportada&lt;/b&gt;&lt;div&gt;Las aplicaciones de la costa este no toleraban la latencia hacia los servidores principales de la costa oeste&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="270" x="375" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-25" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;entryX=0.25;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;fontFamily=Times New Roman;" target="O-04gqA24_E6KpRBvElT-24" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="490" y="370" as="sourcePoint" />
+            <mxPoint x="490" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-24" parent="1" style="shape=xor;whiteSpace=wrap;html=1;shapeInside=1;direction=north;fontFamily=Times New Roman;" value="OR" vertex="1">
+          <mxGeometry height="40" width="50" x="485" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-28" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.541;entryY=0.102;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;fontFamily=Times New Roman;" target="O-04gqA24_E6KpRBvElT-24">
+          <mxGeometry relative="1" x="-0.6777" as="geometry">
+            <Array as="points">
+              <mxPoint x="-30.5" y="248.4" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-31" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;fontFamily=Times New Roman;" target="O-04gqA24_E6KpRBvElT-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-30" parent="1" style="shape=or;whiteSpace=wrap;html=1;shapeInside=1;direction=north;fontFamily=Times New Roman;" value="AND" vertex="1">
+          <mxGeometry height="30" width="48.5" x="-55.5" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-57" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;fontFamily=Times New Roman;" target="O-04gqA24_E6KpRBvElT-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-36" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fontFamily=Times New Roman;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;b&gt;Servidores principales en la costa oeste&lt;/b&gt;&lt;div&gt;La comunicación introdujo latencia entre regiones&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="250" x="385" y="427" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-37" parent="1" style="whiteSpace=wrap;html=1;fontFamily=Times New Roman;rounded=1;roundedPerimeter=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;b&gt;Respaldos remotos&lt;/b&gt;&lt;div&gt;Transferencia, verificación y restauración&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="138" x="682" y="427" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-41" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fontFamily=Times New Roman;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;b&gt;Replicación retrasada&lt;/b&gt;&lt;div&gt;Aumento de escrituras durante la recuperación&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="160" x="832" y="427" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-42" parent="1" style="rounded=1;whiteSpace=wrap;html=1;roundedPerimeter=1;fontFamily=Times New Roman;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="&lt;b&gt;Trabajos acumulados&lt;/b&gt;&lt;div&gt;Webhooks y compilaciones de Pages pendientes&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="170" x="1012" y="427" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-55" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;defaultLabelBackgroundColor=page;fontFamily=Times New Roman;" target="O-04gqA24_E6KpRBvElT-16" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="912" y="368" />
+              <mxPoint x="912" y="368" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-44" parent="1" style="shape=xor;whiteSpace=wrap;html=1;shapeInside=1;direction=north;fontFamily=Times New Roman;" value="OR" vertex="1">
+          <mxGeometry height="30" width="40" x="892" y="367" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-48" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.25;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;fontFamily=Times New Roman;" target="O-04gqA24_E6KpRBvElT-44">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-52" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.441;entryY=1.008;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;fontFamily=Times New Roman;" target="O-04gqA24_E6KpRBvElT-44">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1107" y="383.8" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-53" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.431;entryY=-0.019;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;fontFamily=Times New Roman;" target="O-04gqA24_E6KpRBvElT-44">
+          <mxGeometry relative="1" x="-0.0109" as="geometry">
+            <Array as="points">
+              <mxPoint x="742" y="384.1" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-60" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.7;entryY=0.1;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;fontFamily=Times New Roman;" target="O-04gqA24_E6KpRBvElT-30">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-183.5" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-61" edge="1" parent="1" source="O-04gqA24_E6KpRBvElT-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;defaultLabelBackgroundColor=page;fontFamily=Times New Roman;" target="O-04gqA24_E6KpRBvElT-30">
+          <mxGeometry relative="1" x="0.002" as="geometry">
+            <Array as="points">
+              <mxPoint x="-31.25" y="420" />
+              <mxPoint x="-31.25" y="420" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="O-04gqA24_E6KpRBvElT-63" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=light-dark(#fff6db, #281d00);strokeColor=#d6b656;fontFamily=Times New Roman;" value="&lt;b&gt;Fuente&lt;/b&gt;: Elaboración propia a partir de J. Warner, &quot;October 21 post-incident analysis,&quot; The GitHub Blog, 30 oct. 2018. [Online]. Available on: https://github.blog/news-insights/company-news/oct21-post-incident-analysis/" vertex="1">
+          <mxGeometry height="60" width="642" x="-267" y="510" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
