@@ -1,8 +1,13 @@
+
 \section{Relación con la Unidad 1}
 \label{sec:unidad1}
 
 \subsection{Transparencia}
+Se afectó la transparencia de replicación, porque algunas réplicas mostraban información desactualizada. También falló la transparencia de fallos, ya que los usuarios experimentaron lentitud y funciones suspendidas \cite{Warner2018}.
 
 \subsection{Teorema CAP}
+Ante la partición de red, GitHub sacrificó parte de la disponibilidad para proteger la consistencia de las escrituras. Durante la recuperación restringió algunas operaciones para preservar los datos, aunque ciertas réplicas continuaron mostrando información desactualizada \cite{Warner2018}. Este compromiso entre consistencia y disponibilidad se relaciona con el teorema CAP \cite{GilbertLynch2002,Brewer2012}.
 
 \subsection{Tolerancia a fallos}
+Orchestrator promovió automáticamente réplicas de la costa oeste como nuevos servidores primarios. Sin embargo, la latencia entre regiones y las escrituras sin replicar dificultaron la recuperación, demostrando que la conmutación automática no garantizaba la continuidad del servicio \cite{Warner2018}.
+
