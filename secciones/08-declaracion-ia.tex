@@ -6,15 +6,16 @@
   \small
   \caption{Herramientas de inteligencia artificial usadas como apoyo}
   \label{tab:declaracion-ia}
-  \begin{tabularx}{\textwidth}{@{}p{2.5cm}p{1.7cm}LL@{}}
+  \begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{2.5cm}>{\raggedright\arraybackslash}p{1.7cm}LL@{}}
     \toprule
     \textbf{Herramienta} & \textbf{Versión} & \textbf{Para qué se usó} & \textbf{Cómo se verificó lo obtenido} \\
     \midrule
-    ChatGPT (OpenAI) & GPT-6 & Apoyo para organizar el árbol de fallos, mejorar la redacción del análisis de causas raíz y revisar
+    ChatGPT (OpenAI), Steffanny Loor & GPT-6 & Apoyo para organizar el árbol de fallos, mejorar la redacción del análisis de causas raíz y revisar
     la presentación del diagrama. & Se contrastó la información con el informe oficial del incidente de GitHub de 2018 \cite{Warner2018}. También se revisó el diagrama y se compiló el documento para comprobar su presentación. \\
-     & & & \\
+    \addlinespace
+    Claude Code (Anthropic), aplicación de escritorio, Mario Castro & Claude Fable 5.2 (primer paso) y Claude Opus 5.5 (resto) & Plan de trabajo a partir del enunciado; comparación de los informes oficiales de los cuatro casos y recomendación de uno; carátula del SGA con el script del curso; estructura vacía del repositorio, ramas y configuración de fusiones; mensajes de coordinación del grupo; revisión de los datos del informe de GitHub y su entrada BibLaTeX; entradas de las dos referencias de CAP con \texttt{doi2bib}; revisión de la sección 1, de la fila de lecciones propia y de los PR del equipo contra el informe; conflictos de la tabla de lecciones; ajuste de formato para que el análisis quepa en 2 páginas. & Los comandos se ejecutaron manualmente y el resultado se comprobó en GitHub. Cada observación de las revisiones se comparó con el informe. Las referencias con DOI se contrastaron con doi.org. El documento se compiló con los comandos del README. \\
     \bottomrule
   \end{tabularx}
 
-\noindent\textbf{Ejemplo de prompt utilizado:} ``Ayúdame a revisar las causas raíz del incidente de GitHub de octubre de 2018, tomando como referencia el informe oficial. Quiero organizar las causas en un árbol de fallos, identificar los problemas de replicación y conmutación automática, y comprobar que la explicación sea clara y técnicamente correcta.''
+\par\smallskip\raggedright\textbf{Ejemplo de prompt (Steffanny Loor):} ``Ayúdame a revisar las causas raíz del incidente de GitHub de octubre de 2018, tomando como referencia el informe oficial. Quiero organizar las causas en un árbol de fallos, identificar los problemas de replicación y conmutación automática, y comprobar que la explicación sea clara y técnicamente correcta.''
 \end{table}
