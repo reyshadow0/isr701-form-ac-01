@@ -12,7 +12,7 @@
     \midrule
     1 &  \textbf{Sistema de Pre-Sustentaciones:} si el acta se genera desde una réplica atrasada, como las que en GitHub quedaron horas detrás del primario \cite{Warner2018}, sale sin la nota que el tribunal acaba de registrar y se firma con ese error. &En TA-PFC-E1 se define que notas y actas se leen siempre del primario. Una prueba lo verifica: registra una nota y genera el acta enseguida.\\
     2 & & \\
-    3 & & \\
+    3 & \textbf{Registro de notas:} si se corta la conexión mientras un docente guarda una nota, el sistema podría no registrarla aunque parezca que sí. & Confirmar el guardado antes de mostrar un mensaje de éxito y probar cortes de conexión para evitar registros perdidos o duplicados. \\
     \bottomrule
   \end{tabularx}
 \end{table}
