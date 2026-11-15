@@ -13,7 +13,7 @@
 \usepackage[spanish,es-tabla,es-nodecimaldot]{babel}
 \usepackage{lmodern}
 \usepackage{microtype}
-\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[a4paper,margin=2cm]{geometry}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{tabularx}
@@ -36,8 +36,10 @@
 % Columna de ancho flexible con texto alineado a la izquierda
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}
 
-% Subtítulos (4.1, 5.1...) en la misma línea del texto, para ahorrar espacio
+% Títulos de sección con menos espacio, y subtítulos (4.1, 5.1...) en la misma línea
+% del texto, para que el análisis quepa en 2 páginas
 \makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}{-2ex plus -.5ex minus -.2ex}{1ex plus .2ex}{\normalfont\large\bfseries}}
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}{1ex plus .5ex}{-1em}{\normalfont\normalsize\bfseries}}
 \makeatother
 
