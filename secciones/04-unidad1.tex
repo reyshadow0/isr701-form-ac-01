@@ -3,11 +3,11 @@
 \label{sec:unidad1}
 
 \subsection{Transparencia}
-Se afectó la transparencia de replicación, porque algunas réplicas mostraban información desactualizada. También falló la transparencia de fallos, ya que los usuarios experimentaron lentitud y funciones suspendidas \cite{Warner2018}.
+La transparencia de replicación falló porque algunas réplicas mostraban datos desactualizados. Los usuarios también notaron el problema cuando ciertas funciones dejaron de responder con normalidad, lo que afectó la transparencia de fallos \cite{Warner2018}.
 
 \subsection{Teorema CAP}
-Ante la partición de red, GitHub sacrificó parte de la disponibilidad para proteger la consistencia de las escrituras. Durante la recuperación restringió algunas operaciones para preservar los datos, aunque ciertas réplicas continuaron mostrando información desactualizada \cite{Warner2018}. Este compromiso entre consistencia y disponibilidad se relaciona con el teorema CAP \cite{GilbertLynch2002,Brewer2012}.
+Durante el corte de red, Orchestrator promovió servidores de la costa oeste para que se pudiera seguir escribiendo en las bases de datos. El problema fue que quedaron escrituras sin replicar entre las dos regiones. Después, GitHub prefirió reducir la disponibilidad mientras recuperaba los datos, dando prioridad a su consistencia. A pesar de eso, algunas consultas seguían mostrando información atrasada \cite{Warner2018}. Esto se relaciona con las decisiones entre consistencia y disponibilidad que explica el teorema CAP \cite{Gilbert2002,Brewer2012}.
 
 \subsection{Tolerancia a fallos}
-Orchestrator promovió automáticamente réplicas de la costa oeste como nuevos servidores primarios. Sin embargo, la latencia entre regiones y las escrituras sin replicar dificultaron la recuperación, demostrando que la conmutación automática no garantizaba la continuidad del servicio \cite{Warner2018}.
+El cambio automático de servidores no solucionó el problema. Aunque Orchestrator logró activar nuevos primarios, las aplicaciones de la costa este tuvieron problemas por la latencia al comunicarse con la costa oeste. Esto hizo que el mecanismo de recuperación no funcionara como se esperaba \cite{Warner2018}.
 
