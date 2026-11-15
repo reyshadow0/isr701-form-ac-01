@@ -1,5 +1,5 @@
 \section{Causas raíz}
-    \label{fig:causas}
+\label{sec:causas}
 La interrupción de conectividad de 43 segundos \cite{Warner2018} entre el hub de la red y el centro de datos principal 
 de la costa este activó la conmutación automática de MySQL. Orchestrator promovió réplicas de la costa oeste cuando todavía había escrituras pendientes de replicación, 
 lo que produjo divergencia entre regiones. Una causa de diseño fue que Orchestrator permitía promover servidores principales a otra región, aunque las aplicaciones de la costa este no soportaban la latencia 
