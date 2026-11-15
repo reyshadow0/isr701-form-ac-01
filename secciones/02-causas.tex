@@ -1,2 +1,16 @@
 \section{Causas raíz}
 \label{sec:causas}
+La interrupción de conectividad de 43 segundos \cite{Warner2018} entre el hub de la red y el centro de datos principal 
+de la costa este activó la conmutación automática de MySQL. Orchestrator promovió réplicas de la costa oeste cuando todavía había escrituras pendientes de replicación, 
+lo que produjo divergencia entre regiones. Una causa de diseño fue que Orchestrator permitía promover servidores principales a otra región, aunque las aplicaciones de la costa este no soportaban la latencia 
+de escribir en la costa oeste \cite{Warner2018}.
+La recuperación se prolongó por el volumen de los respaldos remotos, de varios terabytes y por el atraso de las réplicas. La carga de escrituras dificultaba que estas alcanzaran 
+a los servidores principales, mientras se acumulaban trabajos pendientes. La Figura~\ref{fig:causas} resume cómo se combinaron estos factores \cite{Warner2018}.
+
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.92\textwidth]{causas.pdf}
+    \caption{Árbol de fallos del incidente de GitHub de octubre de 2018. Elaboración propia a partir de \cite{Warner2018}.}
+    \label{fig:causas}
+\end{figure}
