@@ -1,8 +1,13 @@
+
 \section{Relación con la Unidad 1}
 \label{sec:unidad1}
 
 \subsection{Transparencia}
+La transparencia de replicación falló porque algunas réplicas mostraban datos desactualizados. Los usuarios también notaron el problema cuando ciertas funciones dejaron de responder con normalidad, lo que afectó la transparencia de fallos \cite{Warner2018}.
 
 \subsection{Teorema CAP}
+Durante el corte de red, Orchestrator promovió servidores de la costa oeste para que se pudiera seguir escribiendo en las bases de datos. El problema fue que quedaron escrituras sin replicar entre las dos regiones. Después, GitHub prefirió reducir la disponibilidad mientras recuperaba los datos, dando prioridad a su consistencia. A pesar de eso, algunas consultas seguían mostrando información atrasada \cite{Warner2018}. Esto se relaciona con las decisiones entre consistencia y disponibilidad que explica el teorema CAP \cite{Gilbert2002,Brewer2012}.
 
 \subsection{Tolerancia a fallos}
+El cambio automático de servidores no solucionó el problema. Aunque Orchestrator logró activar nuevos primarios, las aplicaciones de la costa este tuvieron problemas por la latencia al comunicarse con la costa oeste. Esto hizo que el mecanismo de recuperación no funcionara como se esperaba \cite{Warner2018}.
+
