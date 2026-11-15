@@ -11,7 +11,7 @@
     \textbf{N.\textdegree} & \textbf{Riesgo concreto} & \textbf{Medida preventiva} \\
     \midrule
     1 &  \textbf{Sistema de Pre-Sustentaciones:} si el acta se genera desde una réplica atrasada, como las que en GitHub quedaron horas detrás del primario \cite{Warner2018}, sale sin la nota que el tribunal acaba de registrar y se firma con ese error. &En TA-PFC-E1 se define que notas y actas se leen siempre del primario. Una prueba lo verifica: registra una nota y genera el acta enseguida.\\
-    2 & & \\
+    2 &  \textbf{Sistema de Registro de Eventos Interculturales (SREI):} si falla la base de datos principal y el sistema conmuta a un servidor de otra región, la latencia podría dificultar el registro oportuno de eventos institucionales. & Configurar la conmutación para utilizar únicamente servidores compatibles con la aplicación. Realizar pruebas de latencia y de registro de eventos antes de habilitar el cambio automático. \\
     3 & & \\
     \bottomrule
   \end{tabularx}
