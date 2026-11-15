@@ -1,13 +1,16 @@
 \section{Causas raíz}
     \label{fig:causas}
-El incidente comenzó con una interrupción de conectividad de 43 segundos \cite{Warner2018}
-entre dos instalaciones de GitHub en la costa este de Estados Unidos. Esta desconexión momentánea provocó 
-que Orchestrator promoviera réplicas de MySQL ubicadas en la costa oeste, aunque todavía existían escrituras que estaban 
-pendientes de replicación, lo cual dio como resultado que las bases de datos quedaran en estados diferentes entre ambas regiones \cite{Warner2018}.
-La recuperación fue complicada porque la nueva topología de MySQL no era compatible y generaba latencia entre regiones. Además, fue necesario restaurar respaldos, sincronizar réplicas y procesar trabajos acumulados. 
-Estas condiciones prolongaron la degradación del servicio \cite{Warner2018}.
-\begin{figure}[H]
+La interrupción de conectividad de 43 segundos \cite{Warner2018} entre el hub de la red y el centro de datos principal 
+de la costa este activó la conmutación automática de MySQL. Orchestrator promovió réplicas de la costa oeste cuando todavía había escrituras pendientes de replicación, 
+lo que produjo divergencia entre regiones. Una causa de diseño fue que Orchestrator permitía promover servidores principales a otra región, aunque las aplicaciones de la costa este no soportaban la latencia 
+de escribir en la costa oeste \cite{Warner2018}.
+La recuperación se prolongó por el volumen de los respaldos remotos, de varios terabytes y por el atraso de las réplicas. La carga de escrituras dificultaba que estas alcanzaran 
+a los servidores principales, mientras se acumulaban trabajos pendientes. La Figura~\ref{fig:causas} resume cómo se combinaron estos factores \cite{Warner2018}.
+
+
+\begin{figure}[!htbp]
     \centering
-    \includegraphics[width=\textwidth]{causas.pdf}
+    \includegraphics[width=0.92\textwidth]{causas.pdf}
     \caption{Árbol de fallos del incidente de GitHub de octubre de 2018. Elaboración propia a partir de \cite{Warner2018}.}
+    \label{fig:causas}
 \end{figure}
